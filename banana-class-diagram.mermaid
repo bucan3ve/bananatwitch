@@ -1,0 +1,68 @@
+classDiagram
+    class ViewerBot {
+        -Config config
+        -CustomLogger logger
+        -ResourceMonitor resource_monitor
+        -TwitchAPI twitch_api
+        -str channel_name
+        -str playlist_url
+        -bool running
+        -List all_proxies
+        +__init__(verbose: bool)
+        +handle_shutdown()
+        +get_proxies()
+        +simulate_viewer(proxy_data)
+        +mainmain()
+    }
+
+    class ResourceMonitor {
+        -bool running
+        -Thread monitor_thread
+        -CustomLogger logger
+        -Dict proxy_bandwidth
+        -Dict total_bandwidth
+        -Lock bandwidth_lock
+        +update_proxy_bandwidth()
+        +monitor_resources()
+        +start()
+        +stop()
+        -_save_bandwidth_report()
+    }
+
+    class TwitchAPI {
+        -str client_id
+        -str access_token
+        -str base_url
+        -CustomLogger logger
+        +get_stream_info()
+        +get_access_token()
+        +get_playlist_url()
+    }
+
+    class CustomLogger {
+        -Logger logger
+        -bool verbose
+        +resource()
+        +proxy()
+        -important_only()
+    }
+
+    class Config {
+        -Dict DEFAULT_CONFIG
+        -str config_file
+        -Dict config
+        +load_config()
+        +get()
+        +save()
+    }
+
+    class ColoredFormatter {
+        -Dict COLORS
+        +format()
+    }
+
+    ViewerBot --> Config
+    ViewerBot --> CustomLogger
+    ViewerBot --> ResourceMonitor
+    ViewerBot --> TwitchAPI
+    CustomLogger --> ColoredFormatter
