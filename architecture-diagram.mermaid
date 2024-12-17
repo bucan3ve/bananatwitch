@@ -1,0 +1,40 @@
+C4Context
+    title TwitchBot System Architecture
+
+    Person(user, "User", "Operates the TwitchBot")
+    
+    System_Boundary(bot, "TwitchBot System") {
+        Container(cli, "CLI Interface", "Python", "Handles user input and displays status")
+        
+        Container(core, "ViewerBot Core", "Python", "Main bot logic and coordination")
+        
+        Container(twitch_api, "Twitch API Client", "Python", "Manages Twitch API interactions")
+        
+        Container(proxy_manager, "Proxy Manager", "Python", "Manages proxy connections")
+        
+        Container(resource_monitor, "Resource Monitor", "Python", "Tracks system resources and bandwidth")
+        
+        ContainerDb(config_store, "Config Store", "JSON", "Stores configuration")
+        
+        ContainerDb(logs, "Logging System", "File System", "Stores logs and reports")
+    }
+    
+    System_Ext(twitch, "Twitch Platform", "External Twitch services")
+    
+    System_Ext(proxies, "Proxy Servers", "External proxy services")
+
+    Rel(user, cli, "Uses", "CLI Commands")
+    Rel(cli, core, "Controls", "Python calls")
+    
+    Rel(core, twitch_api, "Uses", "API requests")
+    Rel(core, proxy_manager, "Uses", "Proxy management")
+    Rel(core, resource_monitor, "Uses", "Resource tracking")
+    
+    Rel(twitch_api, twitch, "Requests", "HTTPS")
+    Rel(proxy_manager, proxies, "Connects", "HTTPS")
+    
+    Rel(core, config_store, "Reads/Writes", "JSON")
+    Rel(core, logs, "Writes", "Log entries")
+    
+    UpdateRelStyle(user, cli, $textColor="blue", $lineColor="blue")
+    UpdateRelStyle(cli, core, $textColor="blue", $lineColor="blue")
