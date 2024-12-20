@@ -9,14 +9,10 @@ Questo documento fornisce delle stime di consumo di dati in base a diverse situa
 Se consumi **140 GB** in **4 ore**, il consumo di dati al secondo può essere calcolato come segue:
 
 ### Consumo per Ora:
-\[
-\frac{140 \, \text{GB}}{4 \, \text{ore}} = 35 \, \text{GB/ora}
-\]
+`140 GB / 4 ore = 35 GB/ora`
 
 ### Consumo per Secondo:
-\[
-\frac{140 \, \text{GB}}{4 \, \text{ore} \times 3600 \, \text{secondi/ora}} = \frac{140 \, \text{GB}}{14400 \, \text{secondi}} \approx 0,00972 \, \text{GB/secondo} = 9,72 \, \text{MB/secondo}
-\]
+`140 GB / (4 ore * 3600 secondi/ora) = 140 GB / 14400 secondi ≈ 0,00972 GB/secondo = 9,72 MB/secondo`
 
 ---
 
@@ -24,9 +20,7 @@ Se consumi **140 GB** in **4 ore**, il consumo di dati al secondo può essere ca
 
 Per calcolare il consumo in **150 ore**, utilizziamo il consumo medio di **35 GB/ora**:
 
-\[
-35 \, \text{GB/ora} \times 150 \, \text{ore} = 5250 \, \text{GB}
-\]
+`35 GB/ora * 150 ore = 5250 GB`
 
 Quindi, in **150 ore**, il consumo totale sarebbe **5250 GB**.
 
@@ -36,15 +30,11 @@ Quindi, in **150 ore**, il consumo totale sarebbe **5250 GB**.
 
 Se **100 persone** consumano **9,72 MB/s** ciascuna, il consumo totale al secondo sarebbe:
 
-\[
-9,72 \, \text{MB/s} \times 100 \, \text{persone} = 9720 \, \text{KB/s}
-\]
+`9,72 MB/s * 100 persone = 9720 KB/s`
 
 Per calcolare il consumo per persona:
 
-\[
-\frac{9720 \, \text{KB/s}}{100} = 97,2 \, \text{KB/s}
-\]
+`9720 KB/s / 100 = 97,2 KB/s`
 
 Ogni persona consuma quindi **97,2 KB/s**.
 
@@ -54,23 +44,14 @@ Ogni persona consuma quindi **97,2 KB/s**.
 
 Per rimanere sotto i **5000 GB** di consumo totale in **150 ore**, calcoliamo il massimo consumo per persona al secondo:
 
-1. Totale dei dati (5000 GB in KB):
+1. Totale dei dati (5000 GB in KB):  
+`5000 GB * 1000000 = 5000000000 KB`
 
-\[
-5000 \, \text{GB} \times 1000000 = 5000000000 \, \text{KB}
-\]
+2. Totale dei secondi in 150 ore:  
+`150 ore * 3600 secondi/ora = 540000 secondi`
 
-2. Totale dei secondi in 150 ore:
-
-\[
-150 \, \text{ore} \times 3600 \, \text{secondi/ora} = 540000 \, \text{secondi}
-\]
-
-3. Consumo massimo per persona:
-
-\[
-\frac{5000000000 \, \text{KB}}{540000 \, \text{secondi} \times 100 \, \text{persone}} = 92,59 \, \text{KB/s}
-\]
+3. Consumo massimo per persona:  
+`5000000000 KB / (540000 secondi * 100 persone) = 92,59 KB/s`
 
 Quindi, ogni persona può consumare al massimo **92,59 KB/s** per non superare i **5000 GB** totali in **150 ore**.
 
@@ -80,17 +61,11 @@ Quindi, ogni persona può consumare al massimo **92,59 KB/s** per non superare i
 
 Se il totale di dati è **200 GB** in **150 ore** per **25 persone**, il consumo massimo per persona al secondo sarà:
 
-1. Totale dei dati (200 GB in KB):
+1. Totale dei dati (200 GB in KB):  
+`200 GB * 1000000 = 200000000 KB`
 
-\[
-200 \, \text{GB} \times 1000000 = 200000000 \, \text{KB}
-\]
-
-2. Consumo massimo per persona al secondo:
-
-\[
-\frac{200000000 \, \text{KB}}{540000 \, \text{secondi} \times 25 \, \text{persone}} = 14,81 \, \text{KB/s}
-\]
+2. Consumo massimo per persona al secondo:  
+`200000000 KB / (540000 secondi * 25 persone) = 14,81 KB/s`
 
 Quindi, per **200 GB** totali in **150 ore** per **25 persone**, ogni persona può consumare **14,81 KB/s** al secondo.
 
@@ -102,38 +77,27 @@ Guardando video a **160p** su **Twitch**, il consumo di dati è stimato a **125 
 
 ### Consumo per Persona in 150 Ore:
 
-1. Totale dei secondi in 150 ore:
+1. Totale dei secondi in 150 ore:  
+`150 ore * 3600 secondi/ora = 540000 secondi`
 
-\[
-150 \, \text{ore} \times 3600 \, \text{secondi/ora} = 540000 \, \text{secondi}
-\]
+2. Consumo totale per persona in 150 ore:  
+`125 KB/s * 540000 secondi = 67500000 KB`
 
-2. Consumo totale per persona in 150 ore:
-
-\[
-125 \, \text{KB/s} \times 540000 \, \text{secondi} = 67500000 \, \text{KB}
-\]
-
-3. Convertito in GB:
-
-\[
-\frac{67500000 \, \text{KB}}{1000000} = 67,5 \, \text{GB}
-\]
+3. Convertito in GB:  
+`67500000 KB / 1000000 = 67,5 GB`
 
 ### Consumo per 25 Persone in 150 Ore:
 
 Se **25 persone** guardano video su **Twitch a 160p**, il consumo totale sarà:
 
-\[
-67,5 \, \text{GB} \times 25 = 1687,5 \, \text{GB} = 1,6875 \, \text{TB}
-\]
+`67,5 GB * 25 = 1687,5 GB = 1,6875 TB`
 
 ---
 
 ## Riepilogo dei Risultati
 
-1. **Consumo per Persona al Secondo (160p su Twitch)**: **125 KB/s**
-2. **Consumo Totale per Persona in 150 Ore**: **67,5 GB**
+1. **Consumo per Persona al Secondo (160p su Twitch)**: **125 KB/s**  
+2. **Consumo Totale per Persona in 150 Ore**: **67,5 GB**  
 3. **Consumo Totale per 25 Persone in 150 Ore**: **1,6875 TB**
 
 ---
